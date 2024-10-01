@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi/models/item.dart';
+import 'package:flutter/widgets.dart';
+import 'package:navigasi/widget/footer_widget.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -16,25 +18,35 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Daftar Barang :'),
       ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          return Card(
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(
-                  context,
-                  '/item',
-                  arguments: items[index],
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return Card(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(
+                        context,
+                        '/item',
+                        arguments: items[index],
+                      );
+                    },
+                    child: ListTile(
+                      title: Text(items[index].name),
+                      subtitle: Text('Rp ${items[index].price}'),
+                    ),
+                  ),
                 );
               },
-              child: ListTile(
-                title: Text(items[index].name),
-                subtitle: Text('Rp ${items[index].price}'),
-              ),
             ),
-          );
-        },
+          ),
+          FooterWidget(
+            name: 'M.ismatullah.s.s',  // Ganti dengan nama yang diinginkan
+            nim: '362358302099',    // Ganti dengan NIM yang diinginkan
+          ),
+        ],
       ),
     );
   }
