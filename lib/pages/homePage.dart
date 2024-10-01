@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi/models/item.dart';
-import 'package:flutter/widgets.dart';
 import 'package:navigasi/widget/footer_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -42,7 +41,7 @@ class HomePage extends StatelessWidget {
               },
             ),
           ),
-          FooterWidget(
+          const FooterWidget(
             name: 'M.ismatullah.s.s',  // Ganti dengan nama yang diinginkan
             nim: '362358302099',    // Ganti dengan NIM yang diinginkan
           ),

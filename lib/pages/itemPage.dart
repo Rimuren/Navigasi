@@ -38,7 +38,7 @@ class ItemPage extends StatelessWidget {
               ),
             ),
           ),
-          FooterWidget(
+          const FooterWidget(
            name: 'M.ismatullah.s.s',  
             nim: '362358302099',
           ),
